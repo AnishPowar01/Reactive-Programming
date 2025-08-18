@@ -7,6 +7,7 @@ import com.example.demo.models.Question;
 import com.example.demo.repositories.QuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDateTime;
@@ -25,5 +26,17 @@ public class QuestionService implements IQuestionService {
         return questionRepository.save(question).
                 map(QuestionAdaptor::toQuestionResponseDto).doOnSuccess(response -> System.out.println("Quwartion os ready"))
                 .doOnError(error -> System.out.println("Erroer" + error));
+    }
+
+    @Override
+    public Mono<QuestionResponseDTO> getQuestionById(String id) {
+        return questionRepository.findById(id).map(QuestionAdaptor::toQuestionResponseDto).
+                doOnSuccess(response -> System.out.println("Gotcjha")).
+                doOnError(error -> System.out.println("Error" + error));
+    }
+
+    @Override
+    public Flux<QuestionResponseDTO> getAllQuestions() {
+        return questionRepository.findAll().map(QuestionAdaptor::toQuestionResponseDto);
     }
 }

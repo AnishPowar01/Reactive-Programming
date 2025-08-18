@@ -17,7 +17,7 @@ public class QuestionController {
 
     private final IQuestionService service;
 
-    @PostMapping()
+    @PostMapping("/create")
     public Mono<QuestionResponseDTO> createQuestion(@RequestBody QuestionRequestDTO questionRequestDTO)
     {
         return service.createQuestion(questionRequestDTO).doOnSuccess(response -> System.out.println("Quwartion os ready"))
@@ -25,26 +25,27 @@ public class QuestionController {
     }
 
 
-    @GetMapping
+    @GetMapping("/fetch/{id}")
     public Mono<QuestionResponseDTO> getQuestionById(@PathVariable String id)
     {
-        return null;
+        return service.getQuestionById(id).doOnSuccess(response -> System.out.println("Quwartion os ready"))
+                .doOnError(error -> System.out.println("Error" + error));
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public Flux<QuestionResponseDTO> getAllQuestions()
     {
-        return null;
+        return service.getAllQuestions();
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public Mono<QuestionResponseDTO> deleteQuestionById()
     {
         return null;
     }
 
-    @GetMapping
-    public Flux<QuestionResponseDTO> searchQuestions(RequestParam String , @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size)
+    @GetMapping("/{str}")
+    public Flux<QuestionResponseDTO> searchQuestions(@RequestParam String str , @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size)
     {
         return null;
     }
