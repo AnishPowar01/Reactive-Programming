@@ -1,0 +1,266 @@
+[
+  {
+    "title": "Two Sum",
+    "content": "Find indices of two numbers that add up to target.",
+
+    "tags": ["Array", "HashMap"]
+
+  },
+  {
+    "title": "Reverse Linked List",
+    "content": "Reverse a singly linked list.",
+
+    "tags": ["LinkedList"]
+
+  },
+  {
+    "title": "Valid Parentheses",
+    "content": "Check if parentheses are valid.",
+
+    "tags": ["Stack"]
+
+  },
+  {
+    "title": "Merge Two Sorted Lists",
+    "content": "Merge two sorted linked lists into one.",
+
+    "tags": ["LinkedList"]
+
+  },
+  {
+    "title": "Climbing Stairs",
+    "content": "Count ways to climb stairs taking 1 or 2 steps.",
+
+    "tags": ["DynamicProgramming"]
+
+  },
+  {
+    "title": "Maximum Subarray",
+    "content": "Find contiguous subarray with maximum sum.",
+
+    "tags": ["Array", "Kadane"]
+
+  },
+  {
+    "title": "Container With Most Water",
+    "content": "Find max water container using two lines.",
+
+    "tags": ["TwoPointers"]
+
+  },
+  {
+    "title": "Search in Rotated Sorted Array",
+    "content": "Find target in rotated sorted array.",
+
+    "tags": ["BinarySearch"]
+
+  },
+  {
+    "title": "Permutations",
+    "content": "Generate all permutations of numbers.",
+
+    "tags": ["Backtracking"]
+
+  },
+  {
+    "title": "Word Break",
+    "content": "Check if string can be segmented into dictionary words.",
+
+    "tags": ["DynamicProgramming"]
+
+  },
+  {
+    "title": "Trapping Rain Water",
+    "content": "Calculate trapped rain water between bars.",
+
+    "tags": ["TwoPointers", "Stack"]
+
+  },
+  {
+    "title": "Merge Intervals",
+    "content": "Merge all overlapping intervals.",
+
+    "tags": ["Array", "Sorting"]
+
+  },
+  {
+    "title": "LRU Cache",
+    "content": "Design an LRU cache data structure.",
+
+    "tags": ["Design", "HashMap", "LinkedList"]
+
+  },
+  {
+    "title": "Median of Two Sorted Arrays",
+    "content": "Find median of two sorted arrays.",
+
+    "tags": ["BinarySearch", "DivideAndConquer"]
+
+  },
+  {
+    "title": "Longest Valid Parentheses",
+    "content": "Find length of longest valid parentheses substring.",
+
+    "tags": ["Stack", "DynamicProgramming"]
+
+  },
+  {
+    "title": "Longest Increasing Subsequence",
+    "content": "Find length of LIS in array.",
+
+    "tags": ["DynamicProgramming", "BinarySearch"]
+
+  },
+  {
+    "title": "Kth Largest Element",
+    "content": "Find kth largest element in array.",
+
+    "tags": ["Heap", "Quickselect"]
+
+  },
+  {
+    "title": "Coin Change",
+    "content": "Find min coins required to make amount.",
+
+    "tags": ["DynamicProgramming"]
+
+  },
+  {
+    "title": "Number of Islands",
+    "content": "Count number of islands in grid.",
+
+    "tags": ["DFS", "BFS"]
+
+  },
+  {
+    "title": "Serialize and Deserialize Binary Tree",
+    "content": "Implement codec to serialize and deserialize tree.",
+
+    "tags": ["Tree", "Design"]
+
+  },
+
+  { "title": "Course Schedule", "content": "Determine if you can finish all courses", "tags": ["Graph", "TopologicalSort"]},
+  { "title": "Valid Anagram", "content": "Check if two strings are anagrams", "tags": ["HashMap", "String"]},
+  { "title": "Group Anagrams", "content": "Group anagrams together", "tags": ["HashMap", "Sorting"]},
+  { "title": "Minimum Window Substring", "content": "Find minimum substring containing all chars", "tags": ["SlidingWindow"]},
+  { "title": "Implement Trie", "content": "Implement trie data structure", "tags": ["Trie", "Design"]},
+  { "title": "Word Search", "content": "Check if word exists in grid", "tags": ["Backtracking"]},
+  { "title": "Sudoku Solver", "content": "Solve Sudoku puzzle using backtracking", "tags": ["Backtracking"]},
+  { "title": "Spiral Matrix", "content": "Return elements in spiral order", "tags": ["Array"]},
+  { "title": "Rotate Image", "content": "Rotate n x n matrix 90 degrees", "tags": ["Array"]},
+  { "title": "Set Matrix Zeroes", "content": "Modify matrix with zero rows/cols", "tags": ["Matrix"]},
+  { "title": "Maximum Product Subarray", "content": "Find max product subarray", "tags": ["DynamicProgramming"]},
+  { "title": "Longest Common Subsequence", "content": "Find LCS of two strings", "tags": ["DynamicProgramming"]},
+  { "title": "Edit Distance", "content": "Find min operations to convert one string to another", "tags": ["DynamicProgramming"]},
+  { "title": "Maximum Path Sum", "content": "Find max path sum in binary tree", "tags": ["Tree", "DFS"]},
+  { "title": "Word Ladder", "content": "Find shortest transformation sequence", "tags": ["BFS"]},
+  { "title": "Clone Graph", "content": "Clone an undirected graph", "tags": ["Graph", "DFS"]},
+  { "title": "Pacific Atlantic Water Flow", "content": "Find cells where water can flow to both oceans", "tags": ["DFS"]},
+  { "title": "Alien Dictionary", "content": "Determine order of letters in alien dictionary", "tags": ["Graph", "TopologicalSort"]},
+  { "title": "Find Minimum in Rotated Sorted Array", "content": "Find min element in rotated sorted array", "tags": ["BinarySearch"]},
+  { "title": "Pow(x, n)", "content": "Implement pow(x, n", "tags": ["Math", "Recursion"]},
+  { "title": "Maximum Depth of Binary Tree", "content": "Find max depth of binary tree", "tags": ["Tree", "DFS"]},
+  { "title": "Diameter of Binary Tree", "content": "Find diameter of binary tree", "tags": ["Tree", "DFS"]},
+  { "title": "Invert Binary Tree", "content": "Invert a binary tree", "tags": ["Tree"]},
+  { "title": "Symmetric Tree", "content": "Check if tree is symmetric", "tags": ["Tree", "DFS"]},
+  { "title": "Balanced Binary Tree", "content": "Check if tree is height-balanced", "tags": ["Tree", "DFS"]},
+  { "title": "Lowest Common Ancestor", "content": "Find LCA of two nodes", "tags": ["Tree"]},
+  { "title": "Path Sum", "content": "Check if tree has root-to-leaf path sum", "tags": ["Tree", "DFS"]},
+  { "title": "Subsets", "content": "Find all subsets of a set", "tags": ["Backtracking"]},
+  { "title": "Combination Sum", "content": "Find combinations that sum to target", "tags": ["Backtracking"]},
+  { "title": "Two Sum", "content": "Find indices of two numbers that add up to target.", "tags": ["Array", "HashMap"] },
+  { "title": "Reverse Linked List", "content": "Reverse a singly linked list.", "tags": ["LinkedList"] },
+  { "title": "Valid Parentheses", "content": "Check if parentheses are valid.", "tags": ["Stack"] },
+  { "title": "Merge Two Sorted Lists", "content": "Merge two sorted linked lists.", "tags": ["LinkedList"] },
+  { "title": "Climbing Stairs", "content": "Count ways to climb stairs taking 1 or 2 steps.", "tags": ["DynamicProgramming"] },
+  { "title": "Maximum Subarray", "content": "Find contiguous subarray with maximum sum.", "tags": ["Array"] },
+  { "title": "Container With Most Water", "content": "Find max water container using two lines.", "tags": ["TwoPointers"] },
+  { "title": "Search Rotated Array", "content": "Find target in rotated sorted array.", "tags": ["BinarySearch"] },
+  { "title": "Permutations", "content": "Generate all permutations of numbers.", "tags": ["Backtracking"] },
+  { "title": "Word Break", "content": "Check if string can be segmented into dictionary words.", "tags": ["DynamicProgramming"] },
+  { "title": "Trapping Rain Water", "content": "Calculate trapped rain water between bars.", "tags": ["TwoPointers"] },
+  { "title": "Merge Intervals", "content": "Merge all overlapping intervals.", "tags": ["Array"] },
+  { "title": "LRU Cache", "content": "Design an LRU cache data structure.", "tags": ["Design"] },
+  { "title": "Median of Two Arrays", "content": "Find median of two sorted arrays.", "tags": ["BinarySearch"] },
+  { "title": "Longest Valid Parentheses", "content": "Find longest valid parentheses substring.", "tags": ["Stack"] },
+  { "title": "Longest Increasing Subsequence", "content": "Find LIS in array.", "tags": ["DynamicProgramming"] },
+  { "title": "Kth Largest Element", "content": "Find kth largest element in array.", "tags": ["Heap"] },
+  { "title": "Coin Change", "content": "Find min coins to make amount.", "tags": ["DynamicProgramming"] },
+  { "title": "Number of Islands", "content": "Count islands in a grid.", "tags": ["DFS", "BFS"] },
+  { "title": "Serialize Tree", "content": "Serialize and deserialize a binary tree.", "tags": ["Tree"] },
+  { "title": "Course Schedule", "content": "Check if you can finish all courses.", "tags": ["Graph"] },
+  { "title": "Valid Anagram", "content": "Check if two strings are anagrams.", "tags": ["HashMap"] },
+  { "title": "Group Anagrams", "content": "Group words into anagrams.", "tags": ["HashMap"] },
+  { "title": "Minimum Window Substring", "content": "Find smallest substring containing all chars.", "tags": ["SlidingWindow"] },
+  { "title": "Implement Trie", "content": "Implement prefix tree.", "tags": ["Trie"] },
+  { "title": "Word Search", "content": "Check if word exists in grid.", "tags": ["Backtracking"] },
+  { "title": "Sudoku Solver", "content": "Solve Sudoku puzzle.", "tags": ["Backtracking"] },
+  { "title": "Spiral Matrix", "content": "Return elements in spiral order.", "tags": ["Matrix"] },
+  { "title": "Rotate Matrix", "content": "Rotate n x n matrix 90 degrees.", "tags": ["Matrix"] },
+  { "title": "Set Matrix Zeroes", "content": "Modify matrix with zero rows and cols.", "tags": ["Matrix"] },
+  { "title": "Max Product Subarray", "content": "Find max product subarray.", "tags": ["Array"] },
+  { "title": "Longest Common Subsequence", "content": "Find LCS of two strings.", "tags": ["DynamicProgramming"] },
+  { "title": "Edit Distance", "content": "Find min edit operations between strings.", "tags": ["DynamicProgramming"] },
+  { "title": "Binary Tree Max Path", "content": "Find max path sum in binary tree.", "tags": ["Tree"] },
+  { "title": "Word Ladder", "content": "Transform one word to another.", "tags": ["BFS"] },
+  { "title": "Clone Graph", "content": "Clone an undirected graph.", "tags": ["Graph"] },
+  { "title": "Pacific Atlantic Water", "content": "Cells where water flows to both oceans.", "tags": ["DFS"] },
+  { "title": "Alien Dictionary", "content": "Find alien dictionary order.", "tags": ["Graph"] },
+  { "title": "Find Min Rotated Array", "content": "Find minimum in rotated array.", "tags": ["BinarySearch"] },
+  { "title": "Pow(x, n)", "content": "Implement power function.", "tags": ["Math"] },
+  { "title": "Max Depth Tree", "content": "Find max depth of tree.", "tags": ["Tree"] },
+  { "title": "Diameter Tree", "content": "Find diameter of binary tree.", "tags": ["Tree"] },
+  { "title": "Invert Tree", "content": "Invert a binary tree.", "tags": ["Tree"] },
+  { "title": "Symmetric Tree", "content": "Check if tree is symmetric.", "tags": ["Tree"] },
+  { "title": "Balanced Tree", "content": "Check if tree is height-balanced.", "tags": ["Tree"] },
+  { "title": "Lowest Common Ancestor", "content": "Find LCA of two nodes.", "tags": ["Tree"] },
+  { "title": "Path Sum", "content": "Check if tree has root-to-leaf path sum.", "tags": ["Tree"] },
+  { "title": "Subsets", "content": "Generate all subsets of a set.", "tags": ["Backtracking"] },
+  { "title": "Combination Sum", "content": "Find combinations that sum to target.", "tags": ["Backtracking"] },
+  { "title": "Combination Sum II", "content": "Find unique combinations summing to target.", "tags": ["Backtracking"] },
+  { "title": "N-Queens", "content": "Place queens on board without attack.", "tags": ["Backtracking"] },
+  { "title": "Generate Parentheses", "content": "Generate valid parentheses combos.", "tags": ["Backtracking"] },
+  { "title": "Unique Paths", "content": "Find paths in m x n grid.", "tags": ["DynamicProgramming"] },
+  { "title": "Minimum Path Sum", "content": "Find min path sum in grid.", "tags": ["DynamicProgramming"] },
+  { "title": "House Robber", "content": "Max money without adjacent houses.", "tags": ["DynamicProgramming"] },
+  { "title": "House Robber II", "content": "Max money in circular houses.", "tags": ["DynamicProgramming"] },
+  { "title": "Decode Ways", "content": "Count decoding ways of digits.", "tags": ["DynamicProgramming"] },
+  { "title": "Jump Game", "content": "Check if you can reach end.", "tags": ["Greedy"] },
+  { "title": "Gas Station", "content": "Find start index to complete circuit.", "tags": ["Greedy"] },
+  { "title": "Candy", "content": "Distribute candies fairly.", "tags": ["Greedy"] },
+  { "title": "Insert Interval", "content": "Insert new interval into list.", "tags": ["Array"] },
+  { "title": "Minimum Meeting Rooms", "content": "Find minimum meeting rooms required.", "tags": ["Heap"] },
+  { "title": "K Closest Points", "content": "Find k closest points to origin.", "tags": ["Heap"] },
+  { "title": "Top K Frequent Elements", "content": "Find top k frequent numbers.", "tags": ["Heap"] },
+  { "title": "Product Except Self", "content": "Find array product except self.", "tags": ["Array"] },
+  { "title": "Majority Element", "content": "Find majority element.", "tags": ["Array"] },
+  { "title": "Missing Number", "content": "Find missing number in array.", "tags": ["Array"] },
+  { "title": "Single Number", "content": "Find element appearing once.", "tags": ["BitManipulation"] },
+  { "title": "Excel Sheet Column", "content": "Convert number to column title.", "tags": ["Math"] },
+  { "title": "Factorial Trailing Zeroes", "content": "Find trailing zeroes in factorial.", "tags": ["Math"] },
+  { "title": "Happy Number", "content": "Check if number is happy.", "tags": ["Math"] },
+  { "title": "Ugly Number", "content": "Check if number is ugly.", "tags": ["Math"] },
+  { "title": "Power of Two", "content": "Check if number is power of two.", "tags": ["BitManipulation"] },
+  { "title": "Count Primes", "content": "Count primes less than n.", "tags": ["Math"] },
+  { "title": "Palindrome Number", "content": "Check if number is palindrome.", "tags": ["Math"] },
+  { "title": "Integer to Roman", "content": "Convert integer to Roman numeral.", "tags": ["Math"] },
+  { "title": "Roman to Integer", "content": "Convert Roman numeral to integer.", "tags": ["Math"] },
+  { "title": "Zigzag Conversion", "content": "Convert string to zigzag form.", "tags": ["String"] },
+  { "title": "String to Integer", "content": "Implement atoi function.", "tags": ["String"] },
+  { "title": "Longest Substring No Repeat", "content": "Find length of longest substring without repeat.", "tags": ["SlidingWindow"] },
+  { "title": "Longest Palindrome Substring", "content": "Find longest palindromic substring.", "tags": ["String"] },
+  { "title": "Count and Say", "content": "Generate count-and-say sequence.", "tags": ["String"] },
+  { "title": "Valid Palindrome", "content": "Check if string is palindrome.", "tags": ["String"] },
+  { "title": "Implement strStr()", "content": "Implement substring search.", "tags": ["String"] },
+  { "title": "First Unique Character", "content": "Find first non-repeating char.", "tags": ["String"] },
+  { "title": "Ransom Note", "content": "Check if ransom note can be constructed.", "tags": ["HashMap"] },
+  { "title": "Isomorphic Strings", "content": "Check if two strings are isomorphic.", "tags": ["HashMap"] },
+  { "title": "Word Pattern", "content": "Check if string follows word pattern.", "tags": ["HashMap"] },
+  { "title": "Remove Duplicates", "content": "Remove duplicates from sorted array.", "tags": ["Array"] },
+  { "title": "Remove Element", "content": "Remove all occurrences of element.", "tags": ["Array"] },
+  { "title": "Implement Queue", "content": "Implement queue using stacks.", "tags": ["Stack", "Queue"] },
+  { "title": "Implement Stack", "content": "Implement stack using queues.", "tags": ["Stack", "Queue"] },
+  { "title": "Min Stack", "content": "Design stack supporting min.", "tags": ["Stack"] },
+  { "title": "Binary Search", "content": "Implement binary search.", "tags": ["BinarySearch"] }
+]
