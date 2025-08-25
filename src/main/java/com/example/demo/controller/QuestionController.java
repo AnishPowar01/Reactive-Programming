@@ -44,10 +44,13 @@ public class QuestionController {
         return null;
     }
 
-    @GetMapping("/{str}")
-    public Flux<QuestionResponseDTO> searchQuestions(@RequestParam String str , @RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size)
+    @GetMapping("/search")
+    public Flux<QuestionResponseDTO> searchQuestions
+            (@RequestParam String str , @RequestParam(defaultValue = "0") int page,
+             @RequestParam(defaultValue = "10") int size)
     {
-        return null;
+        return service.searchQuestions(str,page,size).
+                doOnError(error -> System.out.println("Found Error" + error));
     }
 
 }

@@ -6,6 +6,7 @@ import com.example.demo.dto.QuestionResponseDTO;
 import com.example.demo.models.Question;
 import com.example.demo.repositories.QuestionRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -38,5 +39,13 @@ public class QuestionService implements IQuestionService {
     @Override
     public Flux<QuestionResponseDTO> getAllQuestions() {
         return questionRepository.findAll().map(QuestionAdaptor::toQuestionResponseDto);
+    }
+
+    @Override
+    public Flux<QuestionResponseDTO> searchQuestions(String searchTerm, int page, int size) {
+        return questionRepository.findByTitleOrContentIgnoreCase(searchTerm, PageRequest.of(page,size))
+                .map(QuestionAdaptor::toQuestionResponseDto).
+                doOnError(error -> System.out.println("Error Searching Operatiuon" + error)).
+                doOnComplete(() -> System.out.println("Question Searched completed"));
     }
 }
