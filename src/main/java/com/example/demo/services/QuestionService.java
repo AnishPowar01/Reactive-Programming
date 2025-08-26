@@ -37,7 +37,7 @@ public class QuestionService implements IQuestionService {
     public Mono<QuestionResponseDTO> getQuestionById(String id) {
         return questionRepository.findById(id).map(QuestionAdaptor::toQuestionResponseDto).
                 doOnSuccess(response -> {
-                    System.out.println("Question fetched Succesfully");
+                    System.out.println("Question fetched Successfully");
 
                     ViewCountEvent viewCountEvent = new ViewCountEvent(id,"question", LocalDateTime.now());
                     kafkaEventProducer.publishViewCountEvent(viewCountEvent);
