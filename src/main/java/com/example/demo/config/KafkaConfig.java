@@ -32,6 +32,8 @@ public class KafkaConfig {
     @Value("${spring.kafka.consumer.group-id:view-count-consumer}")
     private String groupId;
 
+    public static final String TOPIC_NAME = "view-count-topic";
+
     @Bean
     public ProducerFactory<String, Object> producerFactory()
     {

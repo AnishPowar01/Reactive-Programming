@@ -3,7 +3,9 @@ package com.example.demo.services;
 import com.example.demo.adaptor.QuestionAdaptor;
 import com.example.demo.dto.QuestionRequestDTO;
 import com.example.demo.dto.QuestionResponseDTO;
+import com.example.demo.events.ViewCountEvent;
 import com.example.demo.models.Question;
+import com.example.demo.producers.KafkaEventProducer;
 import com.example.demo.repositories.QuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
@@ -18,6 +20,8 @@ import java.time.LocalDateTime;
 public class QuestionService implements IQuestionService {
 
     private final QuestionRepository questionRepository;
+
+    private final KafkaEventProducer kafkaEventProducer;
     @Override
     public Mono<QuestionResponseDTO> createQuestion(QuestionRequestDTO questionRequestDTO) {
         Question question = Question.builder().title(questionRequestDTO.getTitle()).
@@ -32,7 +36,12 @@ public class QuestionService implements IQuestionService {
     @Override
     public Mono<QuestionResponseDTO> getQuestionById(String id) {
         return questionRepository.findById(id).map(QuestionAdaptor::toQuestionResponseDto).
-                doOnSuccess(response -> System.out.println("Gotcha")).
+                doOnSuccess(response -> {
+                    System.out.println("Question fetched Succesfully");
+
+                    ViewCountEvent viewCountEvent = new ViewCountEvent(id,"question", LocalDateTime.now());
+                    kafkaEventProducer.publishViewCountEvent(viewCountEvent);
+                }).
                 doOnError(error -> System.out.println("Error" + error));
     }
 
