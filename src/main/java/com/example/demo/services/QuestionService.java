@@ -26,13 +26,13 @@ public class QuestionService implements IQuestionService {
 
         return questionRepository.save(question).
                 map(QuestionAdaptor::toQuestionResponseDto).doOnSuccess(response -> System.out.println("Quwartion os ready"))
-                .doOnError(error -> System.out.println("Erroer" + error));
+                .doOnError(error -> System.out.println("Error" + error));
     }
 
     @Override
     public Mono<QuestionResponseDTO> getQuestionById(String id) {
         return questionRepository.findById(id).map(QuestionAdaptor::toQuestionResponseDto).
-                doOnSuccess(response -> System.out.println("Gotcjha")).
+                doOnSuccess(response -> System.out.println("Gotcha")).
                 doOnError(error -> System.out.println("Error" + error));
     }
 
@@ -45,7 +45,7 @@ public class QuestionService implements IQuestionService {
     public Flux<QuestionResponseDTO> searchQuestions(String searchTerm, int page, int size) {
         return questionRepository.findByTitleOrContentIgnoreCase(searchTerm, PageRequest.of(page,size))
                 .map(QuestionAdaptor::toQuestionResponseDto).
-                doOnError(error -> System.out.println("Error Searching Operatiuon" + error)).
+                doOnError(error -> System.out.println("Error Searching Operation" + error)).
                 doOnComplete(() -> System.out.println("Question Searched completed"));
     }
 }
