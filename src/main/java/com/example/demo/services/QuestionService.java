@@ -5,7 +5,9 @@ import com.example.demo.dto.QuestionRequestDTO;
 import com.example.demo.dto.QuestionResponseDTO;
 import com.example.demo.events.ViewCountEvent;
 import com.example.demo.models.Question;
+import com.example.demo.models.QuestionElasticDocument;
 import com.example.demo.producers.KafkaEventProducer;
+import com.example.demo.repositories.QuestionDocumentRepository;
 import com.example.demo.repositories.QuestionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
@@ -14,6 +16,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -22,6 +25,11 @@ public class QuestionService implements IQuestionService {
     private final QuestionRepository questionRepository;
 
     private final KafkaEventProducer kafkaEventProducer;
+
+    private final IQuestionIndexService indexService;
+
+    private final QuestionDocumentRepository documentRepository;
+
     @Override
     public Mono<QuestionResponseDTO> createQuestion(QuestionRequestDTO questionRequestDTO) {
         Question question = Question.builder().title(questionRequestDTO.getTitle()).
@@ -29,7 +37,12 @@ public class QuestionService implements IQuestionService {
                 createdAt(LocalDateTime.now()).updatedAt(LocalDateTime.now()).build();
 
         return questionRepository.save(question).
-                map(QuestionAdaptor::toQuestionResponseDto).doOnSuccess(response -> System.out.println("Quwartion os ready"))
+                map(savedQuestion -> {
+                    indexService.createQuestionIndex(savedQuestion);
+                    return QuestionAdaptor.toQuestionResponseDto(savedQuestion);
+                }).
+//                map(QuestionAdaptor::toQuestionResponseDto).
+                doOnSuccess(response -> System.out.println("Quwartion os ready"))
                 .doOnError(error -> System.out.println("Error" + error));
     }
 
@@ -56,5 +69,10 @@ public class QuestionService implements IQuestionService {
                 .map(QuestionAdaptor::toQuestionResponseDto).
                 doOnError(error -> System.out.println("Error Searching Operation" + error)).
                 doOnComplete(() -> System.out.println("Question Searched completed"));
+    }
+
+    @Override
+    public List<QuestionElasticDocument> searchQuestionByElasticSearch(String query) {
+        return documentRepository.findByTitleContainingOrContentContaining(query,query);
     }
 }
