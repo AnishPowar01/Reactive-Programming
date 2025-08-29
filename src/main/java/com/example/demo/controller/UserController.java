@@ -34,4 +34,11 @@ public class UserController {
         return userService.follow(followRequestDTO);
     }
 
+    @PostMapping("/unfollow")
+    public Mono<Void> unFollow(@RequestBody FollowRequestDTO followRequestDTO)
+    {
+        return userService.unFollow(followRequestDTO);
+    }
+
+
 }

@@ -11,4 +11,5 @@ public interface IUserService {
     Mono<UserDTO> createUser(UserCreateDTO userCreateDTO);
     Mono<UserDTO> findUser(String userHandle);
     Mono<Void> follow(FollowRequestDTO followRequestDTO);
+    Mono<Void> unFollow(FollowRequestDTO followRequestDTO);
 }

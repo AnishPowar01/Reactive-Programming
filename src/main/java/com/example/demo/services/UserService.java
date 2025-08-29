@@ -15,7 +15,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 @RequiredArgsConstructor
-public class UserService implements IUserService{
+public class UserService implements IUserService {
 
     private final UserRepository userRepository;
 
@@ -38,7 +38,7 @@ public class UserService implements IUserService{
     @Override
     public Mono<Void> follow(FollowRequestDTO req) {
 
-        if(req.getFollowerId().equals(req.getFolloweeId())) return Mono.empty();
+        if (req.getFollowerId().equals(req.getFolloweeId())) return Mono.empty();
 
         return followRepository.findByFollowerIdAndFolloweeId(req.getFollowerId(), req.getFolloweeId()).
                 flatMap(edge -> Mono.empty())
@@ -51,18 +51,42 @@ public class UserService implements IUserService{
 
                             Mono<Void> updateFollowee = userRepository.findById(req.getFolloweeId())
                                     .flatMap(user -> {
-                                        user.setFollowerCount(user.getFollowerCount()  +1);
+                                        user.setFollowerCount(user.getFollowerCount() + 1);
                                         return userRepository.save(user);
                                     }).then();
 
                             Mono<Void> updateFollower = userRepository.findById(req.getFollowerId())
                                     .flatMap(user -> {
-                                        user.setFollowingCount(user.getFollowingCount()  +1);
+                                        user.setFollowingCount(user.getFollowingCount() + 1);
                                         return userRepository.save(user);
                                     }).then();
 
                             return saveFollows.then(updateFollowee).then(updateFollower);
                         })
                 ).then();
+    }
+
+    @Override
+    public Mono<Void> unFollow(FollowRequestDTO followRequestDTO) {
+
+        return followRepository.findByFollowerIdAndFolloweeId(followRequestDTO.getFollowerId(), followRequestDTO.getFolloweeId())
+                .flatMap(edge ->
+                        followRepository.delete(edge).
+                                then(
+                                        Mono.when(
+                                                userRepository.findById(followRequestDTO.getFolloweeId())
+                                                        .flatMap(u -> {
+                                                            u.setFollowerCount(Math.max(0, u.getFollowerCount() - 1));
+                                                            return userRepository.save(u);
+                                                        }),
+
+                                                userRepository.findById(followRequestDTO.getFollowerId())
+                                                        .flatMap(u -> {
+                                                            u.setFollowingCount(Math.max(0, u.getFollowingCount() - 1));
+                                                            return userRepository.save(u);
+                                                        })
+                                        )
+                                )).
+                then();
     }
 }
