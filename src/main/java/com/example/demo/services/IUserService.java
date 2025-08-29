@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import com.example.demo.dto.FollowRequestDTO;
 import com.example.demo.dto.UserCreateDTO;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.models.User;
@@ -9,4 +10,5 @@ public interface IUserService {
 
     Mono<UserDTO> createUser(UserCreateDTO userCreateDTO);
     Mono<UserDTO> findUser(String userHandle);
+    Mono<Void> follow(FollowRequestDTO followRequestDTO);
 }

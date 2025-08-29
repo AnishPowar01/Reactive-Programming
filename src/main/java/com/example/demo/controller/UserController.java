@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.FollowRequestDTO;
 import com.example.demo.dto.UserCreateDTO;
 import com.example.demo.dto.UserDTO;
 import com.example.demo.models.User;
@@ -25,6 +26,12 @@ public class UserController {
     public Mono<UserDTO> getUser(@PathVariable String userHandle)
     {
         return userService.findUser(userHandle);
+    }
+
+    @PostMapping("/follow")
+    public Mono<Void> follow(@RequestBody FollowRequestDTO followRequestDTO)
+    {
+        return userService.follow(followRequestDTO);
     }
 
 }
