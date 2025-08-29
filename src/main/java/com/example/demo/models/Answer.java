@@ -34,6 +34,8 @@ public class Answer {
     @Indexed
     private LocalDateTime createdAt;
 
+    private String authorId;
+
     @LastModifiedDate
     private LocalDateTime updatedAt;
 }

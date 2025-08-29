@@ -21,4 +21,7 @@ public class QuestionRequestDTO {
     @NotBlank(message = "Title is required")
     @Size(min = 10, max = 1000, message = "Title must be between 10 and 1000 characters")
     private String content;
+
+    @NotBlank(message = "author id is required")
+    private String authorId;
 }
