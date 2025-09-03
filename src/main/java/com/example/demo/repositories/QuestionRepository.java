@@ -18,4 +18,6 @@ public interface QuestionRepository extends ReactiveMongoRepository<Question, St
 
     @Query("{ '$or' : [{ 'title' : { $regex : ?0 ,  $options : 'i' } }, {'content' : { $regex : ?0 ,$options : 'i'} }] }")
     Flux<Question>findByTitleOrContentIgnoreCase(String searchTerm, Pageable pageable);
+
+    Flux<Question> findAllByAuthorIdInOrderByCreatedAtDesc(Iterable<String> authorIds);
 }
