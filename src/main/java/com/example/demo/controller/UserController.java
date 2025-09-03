@@ -1,9 +1,8 @@
 package com.example.demo.controller;
 
-import com.example.demo.dto.FollowRequestDTO;
-import com.example.demo.dto.UserCreateDTO;
-import com.example.demo.dto.UserDTO;
+import com.example.demo.dto.*;
 import com.example.demo.models.User;
+import com.example.demo.services.FeedService;
 import com.example.demo.services.IUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +14,7 @@ import reactor.core.publisher.Mono;
 public class UserController {
 
     private final IUserService userService;
+    private  FeedService feedService;
 
     @PostMapping("/create")
     public Mono<UserDTO> createUser(UserCreateDTO userCreateDTO)
@@ -38,6 +38,13 @@ public class UserController {
     public Mono<Void> unFollow(@RequestBody FollowRequestDTO followRequestDTO)
     {
         return userService.unFollow(followRequestDTO);
+    }
+
+    @GetMapping("/feed/{userId}")
+    public Mono<FeedPageDto> getFeed(@PathVariable String userId,
+                                     @RequestParam(required = false) String cursor)
+    {
+        return feedService.generateFeedFromDB(userId,cursor);
     }
 
 

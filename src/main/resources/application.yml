@@ -11,3 +11,10 @@ spring:
      uris: http://localhost:9200/
 
 
+  app:
+    feed:
+      # how many items to keep in the per-user cached timeline (LIST)
+      cacheSize: 12
+      pageSize: 4
+
+

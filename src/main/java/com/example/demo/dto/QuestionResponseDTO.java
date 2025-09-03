@@ -23,6 +23,8 @@ public class QuestionResponseDTO {
 
     private String content;
 
+    private String authorId;
+
     private LocalDateTime createdAt;
 
 }
